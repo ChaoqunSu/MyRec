@@ -169,7 +169,7 @@ def Item_CF(trn_user_items, val_user_items, K, N):
             for item, score in sorted(sim[hist_item].items(), key=lambda x:x[1], reverse=True)[:K]:
                 # 排除掉该用户历史点击过的商品,我们只推荐他没点击过的
                 if item not in trn_user_items[uid]:
-                    # 初始化
+                    # 先初始化
                     items_rank[uid][item]=0
                 items_rank[uid][item] += score
 
